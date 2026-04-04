@@ -9,4 +9,8 @@ export const appRoutes: Route[] = [
     path: 'projects',
     loadComponent: () => import('projects').then((m) => m.Projects),
   },
+  {
+    path: 'projects/:category/:id',
+    loadComponent: () => import('projects').then((m) => m.ProjectDetail),
+  },
 ];

@@ -17,11 +17,50 @@
     "title": "Progetti",
     "comingSoon": "Pagina Progetti in arrivo...",
     "summaryPlaceholder": "Una panoramica dei miei progetti. Il mio stack principale è Java e Angular, ma mi adatto volentieri a nuovi linguaggi e framework quando la situazione lo richiede.\n\nClicca sotto per vedere più dettagli.",
-    "viewAll": "Vedi Tutti i Progetti"
+    "viewAll": "Vedi Tutti i Progetti",
+    "sections": {
+      "collaborations": "Collaborazioni",
+      "personal": "Progetti Personali",
+      "old-projects": "Progetti Precedenti"
+    },
+    "backToProjects": "Torna ai Progetti",
+    "notFound": "Progetto non trovato",
+    "items": {
+      "project-alpha": {
+        "title": "Project Alpha",
+        "summary": "Un'applicazione web collaborativa sviluppata con un team distribuito.",
+        "description": "Project Alpha è un'applicazione web full-stack sviluppata in collaborazione con un team internazionale. Il progetto include strumenti di collaborazione in tempo reale, autenticazione utente e un design responsive che funziona su tutti i dispositivi."
+      },
+      "open-source-lib": {
+        "title": "Libreria Open Source",
+        "summary": "Contributi a una libreria UI open source.",
+        "description": "Ho contribuito con diversi componenti a una popolare libreria UI open source. Ho implementato funzionalità di accessibilità e scritto test unitari completi. I contributi hanno migliorato il supporto ARIA della libreria e aggiunto nuovi componenti interattivi."
+      },
+      "personal-website": {
+        "title": "Portfolio Personale",
+        "summary": "Sito per mettere in mostra i miei progetti e competenze.",
+        "description": "Un moderno sito portfolio responsive costruito con Angular e Tailwind CSS. Include supporto per internazionalizzazione (Inglese/Italiano), tema scuro e animazioni fluide. Distribuito su GitHub Pages."
+      },
+      "task-manager": {
+        "title": "App Gestione Attività",
+        "summary": "Un'app di produttività per gestire attività e obiettivi giornalieri.",
+        "description": "Un'applicazione ricca di funzionalità per la gestione delle attività con funzionalità drag-and-drop, attività ricorrenti e monitoraggio dei progressi. Costruita con approccio mobile-first e include supporto offline tramite funzionalità PWA."
+      },
+      "university-project": {
+        "title": "Progetto Tesi Universitaria",
+        "summary": "Progetto di ricerca machine learning per la classificazione di immagini.",
+        "description": "Un progetto di ricerca che esplora le reti neurali convoluzionali per la classificazione di immagini. Ha raggiunto il 95% di accuratezza sul dataset di test e i risultati sono documentati in una tesi pubblicata."
+      },
+      "flashcard-app": {
+        "title": "App Flashcard per Apprendimento",
+        "summary": "Un'app educativa che usa la ripetizione dilazionata per l'apprendimento.",
+        "description": "Un'applicazione flashcard semplice ma efficace che utilizza algoritmi di ripetizione dilazionata per ottimizzare l'apprendimento. Include mazzi generati dagli utenti e statistiche sui progressi."
+      }
+    }
   },
   "about": {
     "title": "Chi sono",
     "comingSoon": "Pagina Chi sono in arrivo...",
-    "bioPlaceholder": "Lavoro come sviluppatore Full stack dal 2022, con un'esperienza concreta nel settore bancario e una curiosità verso il progresso, soprattutto in ambito di IA. Nel privato mi immergo in progetti sia personali che collaborativi, predilendo lavori di gruppo in stile Agile. \n\nTranquillità e serenità accompagnano sempre la qualità del lavoro, per questo mi piace citare sempre che \"ogni sorriso va condiviso\"."
+    "bioPlaceholder": "Lavoro come sviluppatore Full stack dal 2022, con un'esperienza concreta nel settore bancario e una curiosità verso il progresso, soprattutto in ambito di IA. Nel privato mi immergo in progetti sia personali che collaborativi, prediligendo lavori di gruppo in stile Agile. \n\nTranquillità e serenità accompagnano sempre la qualità del lavoro, per questo mi piace citare sempre che \"ogni sorriso va condiviso\"."
   }
 }

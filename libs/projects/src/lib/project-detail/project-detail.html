@@ -1,0 +1,48 @@
+@if (project()) {
+  <article class="project-detail">
+    <button mat-button class="back-btn" (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+      <span>{{ 'projects.backToProjects' | translate }}</span>
+    </button>
+
+    <header class="project-header">
+      <h1 class="project-title">{{ 'projects.items.' + project()!.id + '.title' | translate }}</h1>
+      @if (project()!.githubUrl) {
+        <lib-tooltip [text]="'footer.github' | translate" position="top">
+          <a
+            mat-icon-button
+            [href]="project()!.githubUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="github-link"
+            aria-label="View on GitHub"
+          >
+            <mat-icon>code</mat-icon>
+          </a>
+        </lib-tooltip>
+      }
+    </header>
+
+    <div class="project-image-container">
+      <img [src]="project()!.image" [alt]="'projects.items.' + project()!.id + '.title' | translate" />
+    </div>
+
+    <div class="project-tags">
+      @for (lang of project()!.languages; track lang) {
+        <span class="tag language">{{ lang }}</span>
+      }
+      @for (fw of project()!.frameworks; track fw) {
+        <span class="tag framework">{{ fw }}</span>
+      }
+    </div>
+
+    <p class="project-description">{{ 'projects.items.' + project()!.id + '.description' | translate }}</p>
+  </article>
+} @else {
+  <div class="not-found">
+    <h2>{{ 'projects.notFound' | translate }}</h2>
+    <button mat-raised-button color="primary" routerLink="/projects">
+      {{ 'projects.backToProjects' | translate }}
+    </button>
+  </div>
+}

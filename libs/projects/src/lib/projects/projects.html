@@ -1,4 +1,11 @@
-<div class="projects-container">
-  <h1>{{ 'projects.title' | translate }}</h1>
-  <p>{{ 'projects.comingSoon' | translate }}</p>
+<div class="projects-page">
+  @for (section of sections; track section.category) {
+    @if (getProjects(section.category).length > 0) {
+      <lib-project-section
+        [id]="section.category"
+        [title]="section.titleKey | translate"
+        [projects]="getProjects(section.category)"
+      />
+    }
+  }
 </div>
