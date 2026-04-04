@@ -26,6 +26,7 @@
 
 .nav-links {
   display: flex;
+  align-items: center;
 
   .nav-link {
     text-decoration: none;
@@ -39,10 +40,10 @@
     &:hover {
       color: #ffffff !important;
     }
+  }
 
-    &:not(:last-child) {
-      border-right: 1px solid rgba(255, 255, 255, 0.3);
-    }
+  .separator {
+    color: rgba(255, 255, 255, 0.4);
   }
 }
 

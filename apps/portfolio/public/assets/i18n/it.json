@@ -1,6 +1,6 @@
 {
   "toolbar": {
-    "logo": "Portfolio",
+    "logo": "Home",
     "projects": "Progetti",
     "about": "Chi sono"
   },
@@ -10,18 +10,18 @@
     "linkedin": "LinkedIn"
   },
   "home": {
-    "title": "Benvenuto",
-    "subtitle": "Portfolio Personale"
+    "title": "Ciao",
+    "subtitle": "Portfolio Personale - Gbohou Indji Israel"
   },
   "projects": {
     "title": "Progetti",
     "comingSoon": "Pagina Progetti in arrivo...",
-    "summaryPlaceholder": "Una breve panoramica dei miei progetti. Clicca sotto per vedere più dettagli.",
+    "summaryPlaceholder": "Una panoramica dei miei progetti. Il mio stack principale è Java e Angular, ma mi adatto volentieri a nuovi linguaggi e framework quando la situazione lo richiede.\n\nClicca sotto per vedere più dettagli.",
     "viewAll": "Vedi Tutti i Progetti"
   },
   "about": {
     "title": "Chi sono",
     "comingSoon": "Pagina Chi sono in arrivo...",
-    "bioPlaceholder": "Aggiungi qui la tua biografia. Descrivi chi sei, il tuo background e cosa fai."
+    "bioPlaceholder": "Lavoro come sviluppatore Full stack dal 2022, con un'esperienza concreta nel settore bancario e una curiosità verso il progresso, soprattutto in ambito di IA. Nel privato mi immergo in progetti sia personali che collaborativi, predilendo lavori di gruppo in stile Agile. \n\nTranquillità e serenità accompagnano sempre la qualità del lavoro, per questo mi piace citare sempre che \"ogni sorriso va condiviso\"."
   }
 }

@@ -22,3 +22,22 @@
 
 
 <!-- nx configuration end-->
+
+## Project-Specific Notes
+
+### Deploy Workflow
+
+- Run `yarn deploy` to build and deploy to GitHub Pages
+- This runs: `nx build portfolio --configuration=production --base-href=/personal_portfolio/ && npx angular-cli-ghpages --dir=dist/apps/portfolio/browser`
+- The base-href must match the GitHub Pages repository name
+
+### GitHub Pages Considerations
+
+- Use **relative paths** for assets (e.g., `assets/images/profile.png` not `/assets/images/profile.png`)
+- Absolute paths bypass the base-href and resolve to domain root instead of the subdirectory
+
+### Translation Files
+
+- Located at `apps/portfolio/public/assets/i18n/en.json` and `it.json`
+- Use `\n\n` for paragraph breaks in text content
+- CSS `white-space: pre-line` renders line breaks in HTML
