@@ -1,6 +1,6 @@
 {
   "toolbar": {
-    "logo": "Portfolio",
+    "logo": "Home",
     "projects": "Projects",
     "about": "Who am I"
   },
@@ -10,18 +10,57 @@
     "linkedin": "LinkedIn"
   },
   "home": {
-    "title": "Welcome",
-    "subtitle": "Personal Portfolio"
+    "title": "Hello",
+    "subtitle": "Personal Portfolio - Gbohou Indji Israel"
   },
   "projects": {
     "title": "Projects",
     "comingSoon": "Projects page coming soon...",
-    "summaryPlaceholder": "A brief overview of my projects. Click below to see more details.",
-    "viewAll": "View All Projects"
+    "summaryPlaceholder": "An overview of my projects. My main stack is Java and Angular, but I'm happy to adapt to new languages and frameworks when the situation calls for it.\n\nClick below to see more details.",
+    "viewAll": "View All Projects",
+    "sections": {
+      "collaborations": "Collaborations",
+      "personal": "Personal Projects",
+      "old-projects": "Old Projects"
+    },
+    "backToProjects": "Back to Projects",
+    "notFound": "Project not found",
+    "items": {
+      "project-alpha": {
+        "title": "Project Alpha",
+        "summary": "A collaborative web application built with a distributed team.",
+        "description": "Project Alpha is a full-stack web application developed in collaboration with an international team. The project features real-time collaboration tools, user authentication, and a responsive design that works across all devices."
+      },
+      "open-source-lib": {
+        "title": "Open Source Library",
+        "summary": "Contributing to an open source UI component library.",
+        "description": "Contributed multiple components to a popular open source UI library. Implemented accessibility features and wrote comprehensive unit tests. The contributions improved the library's ARIA support and added new interactive components."
+      },
+      "personal-website": {
+        "title": "Personal Portfolio",
+        "summary": "Webapp that showcases my projects and skills.",
+        "description": "A modern, responsive portfolio website built with Angular and Tailwind CSS. Features include internationalization support (English/Italian), dark theme, and smooth animations. Deployed on GitHub Pages."
+      },
+      "task-manager": {
+        "title": "Task Manager App",
+        "summary": "A productivity app for managing daily tasks and goals.",
+        "description": "A feature-rich task management application with drag-and-drop functionality, recurring tasks, and progress tracking. Built with a mobile-first approach and includes offline support via PWA features."
+      },
+      "university-project": {
+        "title": "University Thesis Project",
+        "summary": "Machine learning research project for image classification.",
+        "description": "A research project exploring convolutional neural networks for image classification. Achieved 95% accuracy on the test dataset and documented findings in a published thesis paper."
+      },
+      "flashcard-app": {
+        "title": "Flashcard Learning App",
+        "summary": "An educational app using spaced repetition for learning.",
+        "description": "A simple but effective flashcard application that uses spaced repetition algorithms to optimize learning. Featured user-generated decks and progress statistics."
+      }
+    }
   },
   "about": {
     "title": "Who am I",
     "comingSoon": "About page coming soon...",
-    "bioPlaceholder": "Add your bio here. Describe who you are, your background, and what you do."
+    "bioPlaceholder": "I've been working as a Full stack developer since 2022, with concrete experience in the banking sector and a curiosity for progress, especially in AI. In my private time, I immerse myself in both personal and collaborative projects, preferring Agile-style team work.\n\nCalmness and serenity always accompany work quality, which is why I like to say that \"smiles go for miles\"."
   }
 }

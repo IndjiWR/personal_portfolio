@@ -1,0 +1,49 @@
+[
+  {
+    "id": "project-alpha",
+    "image": "assets/images/projects/project-alpha.png",
+    "languages": ["TypeScript", "Python"],
+    "frameworks": ["Angular", "FastAPI", "PostgreSQL"],
+    "githubUrl": "https://github.com/example/project-alpha",
+    "category": "collaborations"
+  },
+  {
+    "id": "open-source-lib",
+    "image": "assets/images/projects/open-source-lib.png",
+    "languages": ["TypeScript"],
+    "frameworks": ["Angular", "Jest"],
+    "githubUrl": "https://github.com/example/open-source-lib",
+    "category": "collaborations"
+  },
+  {
+    "id": "personal-website",
+    "image": "assets/images/projects/personal_portfolio.png",
+    "languages": ["TypeScript", "SCSS"],
+    "frameworks": ["Angular", "Tailwind CSS", "Nx"],
+    "githubUrl": "https://github.com/indji00/personal_portfolio",
+    "category": "personal"
+  },
+  {
+    "id": "task-manager",
+    "image": "assets/images/projects/task-manager.png",
+    "languages": ["TypeScript", "HTML"],
+    "frameworks": ["Angular", "ngrx", "Angular Material"],
+    "githubUrl": "https://github.com/example/task-manager",
+    "category": "personal"
+  },
+  {
+    "id": "university-project",
+    "image": "assets/images/projects/thesis.png",
+    "languages": ["Python", "Jupyter Notebook"],
+    "frameworks": ["TensorFlow", "Keras", "NumPy"],
+    "category": "old-projects"
+  },
+  {
+    "id": "flashcard-app",
+    "image": "assets/images/projects/flashcard.png",
+    "languages": ["JavaScript", "HTML", "CSS"],
+    "frameworks": ["React", "Firebase"],
+    "githubUrl": "https://github.com/example/flashcard-app",
+    "category": "old-projects"
+  }
+]
