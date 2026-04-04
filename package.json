@@ -7,7 +7,7 @@
     "start": "nx serve portfolio",
     "build": "nx build portfolio",
     "build:prod": "nx build portfolio --configuration=production",
-    "deploy": "ng deploy --base-href=/personal_portfolio/ --no-silent",
+    "deploy": "nx build portfolio --configuration=production --base-href=/personal_portfolio/ && npx angular-cli-ghpages --dir=dist/apps/portfolio/browser",
     "test": "nx run-many --target=test --all",
     "test:coverage": "nx run-many --target=test --all --code-coverage",
     "storybook": "nx storybook ui",
