@@ -9,7 +9,9 @@
     "paths": {
       "ui": ["libs/ui/src/index.ts"],
       "util": ["libs/util/src/index.ts"],
-      "domain": ["libs/domain/src/index.ts"]
+      "domain": ["libs/domain/src/index.ts"],
+      "about": ["libs/about/src/index.ts"],
+      "projects": ["libs/projects/src/index.ts"]
     }
   }
 }

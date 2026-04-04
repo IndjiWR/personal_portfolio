@@ -1,0 +1,27 @@
+{
+  "toolbar": {
+    "logo": "Portfolio",
+    "projects": "Progetti",
+    "about": "Chi sono"
+  },
+  "footer": {
+    "instagram": "Instagram",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "home": {
+    "title": "Benvenuto",
+    "subtitle": "Portfolio Personale"
+  },
+  "projects": {
+    "title": "Progetti",
+    "comingSoon": "Pagina Progetti in arrivo...",
+    "summaryPlaceholder": "Una breve panoramica dei miei progetti. Clicca sotto per vedere più dettagli.",
+    "viewAll": "Vedi Tutti i Progetti"
+  },
+  "about": {
+    "title": "Chi sono",
+    "comingSoon": "Pagina Chi sono in arrivo...",
+    "bioPlaceholder": "Aggiungi qui la tua biografia. Descrivi chi sei, il tuo background e cosa fai."
+  }
+}

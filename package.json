@@ -6,6 +6,8 @@
   "scripts": {
     "start": "nx serve portfolio",
     "build": "nx build portfolio",
+    "build:prod": "nx build portfolio --configuration=production",
+    "deploy": "ng deploy --base-href=/personal_portfolio/ --no-silent",
     "test": "nx run-many --target=test --all",
     "test:coverage": "nx run-many --target=test --all --code-coverage",
     "storybook": "nx storybook ui",
@@ -45,6 +47,7 @@
     "@typescript-eslint/utils": "^8.40.0",
     "@vitest/coverage-v8": "~4.1.0",
     "@vitest/ui": "~4.1.0",
+    "angular-cli-ghpages": "^3.0.2",
     "angular-eslint": "^21.2.0",
     "autoprefixer": "^10.4.27",
     "eslint": "^9.8.0",
@@ -55,6 +58,7 @@
     "jest-environment-jsdom": "30",
     "jest-preset-angular": "16",
     "jsdom": "^27.1.0",
+    "ng-packagr": "^21.2.2",
     "nx": "22.6.4",
     "postcss": "^8.5.8",
     "prettier": "~3.6.2",
@@ -78,6 +82,8 @@
     "@angular/platform-browser": "~21.2.0",
     "@angular/platform-browser-dynamic": "^21.2.7",
     "@angular/router": "~21.2.0",
+    "@ngx-translate/core": "^17.0.0",
+    "@ngx-translate/http-loader": "^17.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "^0.16.1"

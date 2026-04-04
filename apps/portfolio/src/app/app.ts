@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { Toolbar } from './components/toolbar/toolbar';
+import { Footer } from './components/footer/footer';
+import { TranslationService } from './core/i18n/translation.service';
 
 @Component({
-  imports: [],
+  imports: [RouterModule, Toolbar, Footer],
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
-  protected title = 'portfolio';
+  private translationService = inject(TranslationService);
 }
