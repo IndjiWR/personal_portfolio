@@ -1,0 +1,22 @@
+@use '@angular/material' as mat;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add global styles to this file, and also import other style files */
+
+$html-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$violet-palette,
+    tertiary: mat.$blue-palette,
+  ),
+));
+
+:root {
+  @include mat.all-component-themes($html-theme);
+}
+
+html {
+  color-scheme: light;
+}
