@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="NxAngularConfigService" workspaceLocation="file://$PROJECT_DIR$/nx.json" />
+  <component name="NxAngularConfigService" workspaceLocation="file://$PROJECT_DIR$/nx.json">
+    <projects>
+      <project name="about" file="file://$PROJECT_DIR$/libs/about/project.json" />
+      <project name="domain" file="file://$PROJECT_DIR$/libs/domain/project.json" />
+      <project name="portfolio" file="file://$PROJECT_DIR$/apps/portfolio/project.json" />
+      <project name="portfolio-e2e" file="file://$PROJECT_DIR$/apps/portfolio-e2e/project.json" />
+      <project name="projects" file="file://$PROJECT_DIR$/libs/projects/project.json" />
+      <project name="ui" file="file://$PROJECT_DIR$/libs/ui/project.json" />
+      <project name="util" file="file://$PROJECT_DIR$/libs/util/project.json" />
+    </projects>
+  </component>
 </project>

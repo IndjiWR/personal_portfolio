@@ -17,17 +17,17 @@ export class Footer {
   readonly socialLinks = [
     {
       nameKey: 'footer.instagram',
-      url: 'https://instagram.com',
+      url: 'https://www.instagram.com/indji_00/',
       icon: 'photo_camera',
     },
     {
       nameKey: 'footer.github',
-      url: 'https://github.com',
+      url: 'https://github.com/IndjiWR?tab=repositories',
       icon: 'code',
     },
     {
       nameKey: 'footer.linkedin',
-      url: 'https://linkedin.com',
+      url: 'https://it.linkedin.com/in/indji-israel-gbohou-78097a223/it',
       icon: 'work',
     },
   ];
