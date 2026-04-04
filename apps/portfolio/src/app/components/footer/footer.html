@@ -1,0 +1,51 @@
+<footer class="footer" [class.at-bottom]="isAtBottom() || isExpanded()">
+  <!-- FAB Button (visible when not at bottom) -->
+  <button
+    mat-fab
+    color="primary"
+    class="social-fab"
+    [class.visible]="!isAtBottom() && !isExpanded()"
+    (click)="toggleExpand()"
+    aria-label="Open social links"
+  >
+    <mat-icon>share</mat-icon>
+  </button>
+
+  <!-- Expanded FAB with icons -->
+  <div class="social-fab-expanded" [class.visible]="isExpanded() && !isAtBottom()">
+    @for (link of socialLinks; track link.nameKey) {
+      <a
+        mat-mini-fab
+        color="primary"
+        [href]="link.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        [attr.aria-label]="link.nameKey | translate"
+        class="social-fab-link"
+      >
+        <mat-icon>{{ link.icon }}</mat-icon>
+      </a>
+    }
+    <button mat-mini-fab class="close-btn" (click)="toggleExpand()" aria-label="Close">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <!-- Full footer (visible when at bottom) -->
+  <div class="social-links" [class.visible]="isAtBottom()">
+    @for (link of socialLinks; track link.nameKey) {
+      <lib-tooltip [text]="link.nameKey | translate" position="top">
+        <a
+          mat-icon-button
+          [href]="link.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.aria-label]="link.nameKey | translate"
+          class="social-link"
+        >
+          <mat-icon>{{ link.icon }}</mat-icon>
+        </a>
+      </lib-tooltip>
+    }
+  </div>
+</footer>

@@ -1,0 +1,6 @@
+<section [id]="id()" class="section">
+  @if (title()) {
+    <h2 class="section-title">{{ title() }}</h2>
+  }
+  <ng-content></ng-content>
+</section>

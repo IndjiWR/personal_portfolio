@@ -13,6 +13,6 @@ module.exports = {
       },
     ],
   },
-  transformIgnorePatterns: ['node_modules/(?!(jest-preset-angular|@angular|zone.js)/)'],
+  transformIgnorePatterns: ['node_modules/(?!(jest-preset-angular|@angular|zone.js|@ngx-translate)/)'],
   resolver: '@nx/jest/plugins/resolver',
 };
