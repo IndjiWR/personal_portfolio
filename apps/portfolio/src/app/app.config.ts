@@ -8,6 +8,8 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideTranslateService } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { appRoutes } from './app.routes';
+import { PROJECT_ENVIRONMENT } from 'projects';
+import { environment } from '../environments/environment';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,5 +24,9 @@ export const appConfig: ApplicationConfig = {
       }),
       defaultLanguage: 'en',
     }),
+    {
+      provide: PROJECT_ENVIRONMENT,
+      useValue: { mode: environment.mode },
+    },
   ],
 };
