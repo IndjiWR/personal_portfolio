@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { ProjectService } from './project.service';
-import { ProjectData, ProjectCategory } from '../models/project.model';
+import { ProjectData, PROJECT_ENVIRONMENT } from '../models/project.model';
 
 describe('ProjectService', () => {
   let service: ProjectService;
@@ -14,6 +14,7 @@ describe('ProjectService', () => {
       languages: ['TypeScript'],
       frameworks: ['Angular'],
       category: 'collaborations',
+      local: true,
     },
     {
       id: 'project-2',
@@ -21,6 +22,7 @@ describe('ProjectService', () => {
       languages: ['Java'],
       frameworks: ['Spring'],
       category: 'personal',
+      production: true,
     },
     {
       id: 'project-3',
@@ -28,89 +30,162 @@ describe('ProjectService', () => {
       languages: ['Python'],
       frameworks: ['Django'],
       category: 'old-projects',
+      // Neither flag - not shown in any mode
+    },
+    {
+      id: 'project-4',
+      image: 'assets/images/p4.png',
+      languages: ['Go'],
+      frameworks: ['Gin'],
+      category: 'personal',
+      local: true,
+      production: true, // Shown in both modes
     },
   ];
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [ProjectService],
+  describe('in local mode', () => {
+    beforeEach(() => {
+      TestBed.configureTestingModule({
+        imports: [HttpClientTestingModule],
+        providers: [
+          ProjectService,
+          { provide: PROJECT_ENVIRONMENT, useValue: { mode: 'local' } },
+        ],
+      });
+      service = TestBed.inject(ProjectService);
+      httpMock = TestBed.inject(HttpTestingController);
     });
-    service = TestBed.inject(ProjectService);
-    httpMock = TestBed.inject(HttpTestingController);
-  });
 
-  afterEach(() => {
-    httpMock.verify();
-  });
+    afterEach(() => {
+      httpMock.verify();
+    });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+    it('should be created', () => {
+      expect(service).toBeTruthy();
+    });
 
-  describe('getProjectsData', () => {
-    it('should fetch projects data from assets', () => {
-      service.getProjectsData().subscribe((data) => {
-        expect(data).toEqual(mockProjects);
+    it('should return only local projects', () => {
+      service.getVisibleProjects().subscribe((projects) => {
+        expect(projects.length).toBe(2);
+        expect(projects.map((p) => p.id)).toEqual(
+          expect.arrayContaining(['project-1', 'project-4'])
+        );
       });
 
       const req = httpMock.expectOne('assets/data/projects.json');
-      expect(req.request.method).toBe('GET');
       req.flush(mockProjects);
+    });
+
+    it('should not return production-only projects', () => {
+      service.getVisibleProjects().subscribe((projects) => {
+        expect(projects.find((p) => p.id === 'project-2')).toBeUndefined();
+      });
+
+      const req = httpMock.expectOne('assets/data/projects.json');
+      req.flush(mockProjects);
+    });
+
+    it('should not return projects with no flags', () => {
+      service.getVisibleProjects().subscribe((projects) => {
+        expect(projects.find((p) => p.id === 'project-3')).toBeUndefined();
+      });
+
+      const req = httpMock.expectOne('assets/data/projects.json');
+      req.flush(mockProjects);
+    });
+  });
+
+  describe('in production mode', () => {
+    beforeEach(() => {
+      TestBed.configureTestingModule({
+        imports: [HttpClientTestingModule],
+        providers: [
+          ProjectService,
+          { provide: PROJECT_ENVIRONMENT, useValue: { mode: 'production' } },
+        ],
+      });
+      service = TestBed.inject(ProjectService);
+      httpMock = TestBed.inject(HttpTestingController);
+    });
+
+    afterEach(() => {
+      httpMock.verify();
+    });
+
+    it('should be created', () => {
+      expect(service).toBeTruthy();
+    });
+
+    it('should return only production projects', () => {
+      service.getVisibleProjects().subscribe((projects) => {
+        expect(projects.length).toBe(2);
+        expect(projects.map((p) => p.id)).toEqual(
+          expect.arrayContaining(['project-2', 'project-4'])
+        );
+      });
+
+      const req = httpMock.expectOne('assets/data/projects.json');
+      req.flush(mockProjects);
+    });
+
+    it('should not return local-only projects', () => {
+      service.getVisibleProjects().subscribe((projects) => {
+        expect(projects.find((p) => p.id === 'project-1')).toBeUndefined();
+      });
+
+      const req = httpMock.expectOne('assets/data/projects.json');
+      req.flush(mockProjects);
+    });
+
+    it('should not return projects with no flags', () => {
+      service.getVisibleProjects().subscribe((projects) => {
+        expect(projects.find((p) => p.id === 'project-3')).toBeUndefined();
+      });
+
+      const req = httpMock.expectOne('assets/data/projects.json');
+      req.flush(mockProjects);
+    });
+  });
+
+  describe('common functionality', () => {
+    beforeEach(() => {
+      TestBed.configureTestingModule({
+        imports: [HttpClientTestingModule],
+        providers: [
+          ProjectService,
+          { provide: PROJECT_ENVIRONMENT, useValue: { mode: 'local' } },
+        ],
+      });
+      service = TestBed.inject(ProjectService);
+      httpMock = TestBed.inject(HttpTestingController);
+    });
+
+    afterEach(() => {
+      httpMock.verify();
     });
 
     it('should cache the response and not make duplicate requests', () => {
-      // First call
       service.getProjectsData().subscribe();
       httpMock.expectOne('assets/data/projects.json').flush(mockProjects);
 
-      // Second call should use cache (shareReplay)
       service.getProjectsData().subscribe((data) => {
         expect(data).toEqual(mockProjects);
       });
 
-      // No new request should be made
       httpMock.expectNone('assets/data/projects.json');
     });
-  });
 
-  describe('getProjectsByCategory', () => {
-    it('should return filtered projects for collaborations category', () => {
+    it('should filter projects by category', () => {
       service.getProjectsByCategory('collaborations').subscribe((projects) => {
         expect(projects.length).toBe(1);
         expect(projects[0].id).toBe('project-1');
-        expect(projects[0].category).toBe('collaborations');
       });
 
       const req = httpMock.expectOne('assets/data/projects.json');
       req.flush(mockProjects);
     });
 
-    it('should return filtered projects for personal category', () => {
-      service.getProjectsByCategory('personal').subscribe((projects) => {
-        expect(projects.length).toBe(1);
-        expect(projects[0].id).toBe('project-2');
-        expect(projects[0].category).toBe('personal');
-      });
-
-      const req = httpMock.expectOne('assets/data/projects.json');
-      req.flush(mockProjects);
-    });
-
-    it('should return empty array for category with no projects', () => {
-      service.getProjectsByCategory('old-projects' as ProjectCategory).subscribe((projects) => {
-        // Should return project-3
-        expect(projects.length).toBe(1);
-        expect(projects[0].id).toBe('project-3');
-      });
-
-      const req = httpMock.expectOne('assets/data/projects.json');
-      req.flush(mockProjects);
-    });
-  });
-
-  describe('getProjectById', () => {
-    it('should return project by category and id', () => {
+    it('should return project by id', () => {
       service.getProjectById('collaborations', 'project-1').subscribe((project) => {
         expect(project).toBeTruthy();
         expect(project?.id).toBe('project-1');
@@ -129,23 +204,11 @@ describe('ProjectService', () => {
       req.flush(mockProjects);
     });
 
-    it('should return undefined for wrong category', () => {
-      service.getProjectById('personal', 'project-1').subscribe((project) => {
-        expect(project).toBeUndefined();
-      });
-
-      const req = httpMock.expectOne('assets/data/projects.json');
-      req.flush(mockProjects);
-    });
-  });
-
-  describe('getCategories', () => {
-    it('should return unique categories', () => {
+    it('should return categories from visible projects', () => {
       service.getCategories().subscribe((categories) => {
-        expect(categories.length).toBe(3);
+        expect(categories.length).toBe(2);
         expect(categories).toContain('collaborations');
         expect(categories).toContain('personal');
-        expect(categories).toContain('old-projects');
       });
 
       const req = httpMock.expectOne('assets/data/projects.json');

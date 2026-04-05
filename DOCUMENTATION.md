@@ -378,9 +378,74 @@ Structure:
     "languages": ["Java", "TypeScript"],
     "frameworks": ["Angular", "Spring"],
     "githubUrl": "https://github.com/...",
-    "category": "collaborations" | "personal" | "old-projects"
+    "category": "collaborations" | "personal" | "old-projects",
+    "production": true,
+    "local": true
   }
 ]
+```
+
+**Field Reference:**
+- `id` - Unique identifier (used in URLs)
+- `image` - Path to project image
+- `languages` - Array of programming languages
+- `frameworks` - Array of frameworks/tools
+- `githubUrl` - (optional) Link to GitHub repository
+- `category` - One of: `collaborations`, `personal`, `old-projects`
+- `production` - (optional) If `true`, shown when mode is 'production'
+- `local` - (optional) If `true`, shown when mode is 'local'
+
+**Visibility Rules:**
+
+| `production` | `local` | Mode: `local` | Mode: `production` |
+|--------------|---------|---------------|---------------------|
+| `true` | - | ❌ Hidden | ✅ Shown |
+| - | `true` | ✅ Shown | ❌ Hidden |
+| `true` | `true` | ✅ Shown | ✅ Shown |
+| - (not set) | - (not set) | ❌ Hidden | ❌ Hidden |
+
+**Environment Toggle:**
+
+Switch between modes in `apps/portfolio/src/environments/environment.ts`:
+
+```typescript
+export const environment = {
+  mode: 'local',     // Shows projects with local: true
+  // mode: 'production', // Shows projects with production: true
+  isDevMode: true,
+};
+```
+
+For production builds, `environment.prod.ts` is used automatically (mode: 'production').
+
+**Examples:**
+
+Production-ready project:
+```json
+{
+  "id": "my-project",
+  "production": true,
+  ...
+}
+```
+
+Work in progress (local only):
+```json
+{
+  "id": "draft-project",
+  "local": true,
+  ...
+}
+```
+
+Visible in both modes:
+```json
+{
+  "id": "featured-project",
+  "production": true,
+  "local": true,
+  ...
+}
 ```
 
 Categories are defined in `libs/projects/src/lib/models/project.model.ts`.
