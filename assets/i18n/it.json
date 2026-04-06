@@ -55,6 +55,16 @@
         "title": "App Flashcard per Apprendimento",
         "summary": "Un'app educativa che usa la ripetizione dilazionata per l'apprendimento.",
         "description": "Un'applicazione flashcard semplice ma efficace che utilizza algoritmi di ripetizione dilazionata per ottimizzare l'apprendimento. Include mazzi generati dagli utenti e statistiche sui progressi."
+      },
+      "monthly-expenses-app": {
+        "title": "Spese Mensili",
+        "summary": "Un'app mobile per tracciare le spese personali e il budget.",
+        "description": "Un'applicazione mobile multipiattaforma costruita con Ionic e Angular per tracciare le spese quotidiane. Include categorizzazione delle spese, panoramica del budget mensile, grafici visuali ed esportazione dati. Disponibile per dispositivi Android e iOS."
+      },
+      "smart-rockets": {
+        "title": "Smart Rockets",
+        "summary": "Una simulazione di algoritmi genetici con evoluzione di razzi.",
+        "description": "Un progetto scolastico che dimostra gli algoritmi genetici attraverso la navigazione di razzi. Gli utenti possono disegnare percorsi con ostacoli e osservare i razzi evolversi attraverso le generazioni per raggiungere l'obiettivo. Include parametri modificabili come il tasso di apprendimento, la dimensione della popolazione e la casualità delle mutazioni genetiche."
       }
     }
   },
