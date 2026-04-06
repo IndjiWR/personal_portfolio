@@ -45,12 +45,23 @@
     "local": true
   },
   {
-    "id": "flashcard-app",
-    "image": "assets/images/projects/flashcard.png",
-    "languages": ["JavaScript", "HTML", "CSS"],
-    "frameworks": ["React", "Firebase"],
-    "githubUrl": "https://github.com/example/flashcard-app",
+    "id": "smart-rockets",
+    "image": "assets/images/projects/smart-rockets.png",
+    "languages": ["Java"],
+    "frameworks": ["Genetic Algorithm"],
+    "githubUrl": "https://github.com/IndjiWR/Smart_Rockets",
     "category": "old-projects",
+    "local": true,
+    "production": true
+  },
+  {
+    "id": "monthly-expenses-app",
+    "image": "assets/images/projects/monthly-expenses.png",
+    "languages": ["Typescript", "HTML", "CSS"],
+    "frameworks": ["Ionic", "Angular", "NX", "Tailwind"],
+    "githubUrl": "https://github.com/IndjiWR/monthly-expenses",
+    "category": "personal",
+    "production": true,
     "local": true
   }
 ]

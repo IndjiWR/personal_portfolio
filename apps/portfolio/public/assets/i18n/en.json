@@ -55,6 +55,16 @@
         "title": "Flashcard Learning App",
         "summary": "An educational app using spaced repetition for learning.",
         "description": "A simple but effective flashcard application that uses spaced repetition algorithms to optimize learning. Featured user-generated decks and progress statistics."
+      },
+      "monthly-expenses-app": {
+        "title": "Monthly Expenses",
+        "summary": "A mobile app for tracking personal expenses and budgeting.",
+        "description": "A cross-platform mobile application built with Ionic and Angular for tracking daily expenses. Features include expense categorization, monthly budget overview, visual charts, and data export. Available for both Android and iOS devices."
+      },
+      "smart-rockets": {
+        "title": "Smart Rockets",
+        "summary": "A genetic algorithm simulation showing rocket evolution.",
+        "description": "A school project demonstrating genetic algorithms through rocket navigation. Users can draw obstacle paths and watch rockets evolve across generations to reach the goal. Features editable parameters including learning rate, population size, and gene mutation randomness."
       }
     }
   },
