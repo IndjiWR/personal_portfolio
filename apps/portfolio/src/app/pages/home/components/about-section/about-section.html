@@ -1,10 +1,27 @@
 <lib-section id="about" [title]="'about.title' | translate">
-  <div class="about-content">
-    <div class="avatar">
-      <img src="assets/images/profile.png" alt="Profile" />
+  <div class="about-content" scrollReveal>
+    <div class="avatar-wrapper">
+      <div class="avatar">
+        <img src="assets/images/profile.png" alt="Profile" />
+      </div>
     </div>
     <div class="bio">
-      <p>{{ 'about.bioPlaceholder' | translate }}</p>
+      <h3 class="about-name">{{ 'about.name' | translate }}</h3>
+      <p class="about-role">{{ 'about.role' | translate }}</p>
+      <p class="about-bio">{{ 'about.bioPlaceholder' | translate }}</p>
     </div>
+  </div>
+  <div class="tech-stack">
+    @for (tech of techStack; track tech.name; let i = $index) {
+      <span
+        class="tech-pill"
+        [class.language]="tech.type === 'language'"
+        [class.framework]="tech.type === 'framework'"
+        scrollReveal
+        [staggerIndex]="i"
+      >
+        {{ tech.name }}
+      </span>
+    }
   </div>
 </lib-section>
