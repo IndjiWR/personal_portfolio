@@ -1,13 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
-import { MatIconModule } from '@angular/material/icon';
 import { AboutSection } from './components/about-section/about-section';
 import { ProjectsSection } from './components/projects-section/projects-section';
+import { HeroSection } from './components/hero-section/hero-section';
 
 @Component({
   selector: 'app-home',
-  imports: [TranslateModule, MatIconModule, AboutSection, ProjectsSection],
+  imports: [HeroSection, AboutSection, ProjectsSection],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

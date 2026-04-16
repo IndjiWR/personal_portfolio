@@ -1,0 +1,23 @@
+<section class="hero" id="hero">
+  <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="terminal-prompt">> indji.dev<span class="cursor">_</span></p>
+    <h1 class="hero-name">{{ 'home.hero.name' | translate }}</h1>
+    <p class="hero-role">{{ 'home.hero.role' | translate }}</p>
+    <p class="hero-tagline">{{ taglines[currentTaglineIndex()] | translate }}</p>
+    <div class="hero-ctas">
+      <button mat-button class="cta-primary" (click)="scrollToProjects()">
+        <span>{{ 'home.hero.ctaProjects' | translate }}</span>
+        <mat-icon>arrow_downward</mat-icon>
+      </button>
+      <button mat-button class="cta-secondary" (click)="scrollToContact()">
+        <span>{{ 'home.hero.ctaContact' | translate }}</span>
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <mat-icon>expand_more</mat-icon>
+  </div>
+</section>

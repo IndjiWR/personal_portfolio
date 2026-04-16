@@ -6,6 +6,9 @@ import { provideHttpClient } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
 
+// Mock canvas getContext for jsdom (not natively supported)
+HTMLCanvasElement.prototype.getContext = jest.fn().mockReturnValue(null);
+
 describe('Home', () => {
   let component: Home;
   let fixture: ComponentFixture<Home>;
@@ -91,8 +94,11 @@ describe('Home', () => {
       newFixture.componentInstance.ngAfterViewInit();
       tick(150);
 
-      // Since fragment is null, getElementById should not be called
-      expect(scrollSpy).not.toHaveBeenCalled();
+      // Since fragment is null, Home should not trigger scrolling
+      // Note: HeroSection calls getElementById('hero-canvas') for canvas init, which is expected
+      const calls = scrollSpy.mock.calls.map(call => call[0]);
+      const scrollTargets = calls.filter(id => id !== 'hero-canvas');
+      expect(scrollTargets).toEqual([]);
     }));
 
     it('should handle missing element gracefully', fakeAsync(() => {
