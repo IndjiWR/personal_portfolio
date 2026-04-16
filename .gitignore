@@ -26,3 +26,5 @@ yarn-error.log*
 __screenshots__/
 
 vitest.config.*.timestamp*
+
+.superpowers/
