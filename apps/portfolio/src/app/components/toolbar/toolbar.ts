@@ -1,26 +1,18 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal, OnDestroy, PLATFORM_ID } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { UpperCasePipe } from '@angular/common';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { UpperCasePipe, isPlatformBrowser } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslationService } from '../../core/i18n/translation.service';
-
-// Maps section IDs to their dedicated routes (if they have one)
-// Sections not in this map are home-page only
-const SECTION_ROUTES: Record<string, string> = {
-  projects: '/projects',
-  // Add future sections with dedicated pages here, e.g.:
-  // blog: '/blog',
-};
+import { fromEvent, Subscription } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-toolbar',
   imports: [
     RouterModule,
     UpperCasePipe,
-    MatToolbarModule,
     MatButtonModule,
     MatIconModule,
     TranslateModule,
@@ -28,42 +20,57 @@ const SECTION_ROUTES: Record<string, string> = {
   templateUrl: './toolbar.html',
   styleUrl: './toolbar.scss',
 })
-export class Toolbar {
+export class Toolbar implements OnDestroy {
   private router = inject(Router);
   translationService = inject(TranslationService);
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
-  private scrollToElement(sectionId: string): void {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  isScrolled = signal(false);
+  isMobileMenuOpen = signal(false);
+
+  private scrollSub: Subscription | null = null;
+
+  constructor() {
+    if (this.isBrowser) {
+      this.scrollSub = fromEvent(window, 'scroll')
+        .pipe(debounceTime(16))
+        .subscribe(() => {
+          this.isScrolled.set(window.scrollY > 50);
+        });
     }
   }
 
-  private scrollToTop(): void {
-    window.scrollTo({ behavior: 'smooth', top: 0 });
-  }
-
   navigateToSection(sectionId: string): void {
+    this.isMobileMenuOpen.set(false);
     const currentPath = this.router.url.split('?')[0].split('#')[0];
-    const dedicatedRoute = SECTION_ROUTES[sectionId];
-    const isOnDedicatedPage = dedicatedRoute && currentPath.startsWith(dedicatedRoute);
     const isOnHome = currentPath === '/';
 
-    if (isOnDedicatedPage) {
-      // Already on the dedicated page for this section - scroll to top
-      this.scrollToTop();
-    } else if (isOnHome) {
-      // On home page - scroll to the section
-      this.scrollToElement(sectionId);
+    if (isOnHome) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     } else {
-      // Navigate to home with fragment, then scroll
       this.router.navigate(['/'], { fragment: sectionId }).then(() => {
-        setTimeout(() => this.scrollToElement(sectionId), 100);
+        setTimeout(() => {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
       });
     }
   }
 
   toggleLanguage(): void {
     this.translationService.toggleLanguage();
+  }
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen.update((v) => !v);
+  }
+
+  ngOnDestroy(): void {
+    this.scrollSub?.unsubscribe();
   }
 }

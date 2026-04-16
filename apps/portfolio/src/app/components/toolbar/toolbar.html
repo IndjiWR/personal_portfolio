@@ -1,16 +1,23 @@
-<mat-toolbar class="toolbar">
-  <a routerLink="/" class="logo">{{ 'toolbar.logo' | translate }}</a>
+<nav class="toolbar" [class.scrolled]="isScrolled()">
+  <a routerLink="/" class="logo">
+    <span class="prompt">&gt;</span>indji.dev
+  </a>
   <span class="spacer"></span>
-  <nav class="nav-links">
+  <div class="nav-links" [class.mobile-open]="isMobileMenuOpen()">
     <button mat-button (click)="navigateToSection('projects')" class="nav-link">
       {{ 'toolbar.projects' | translate }}
     </button>
-    <span class="separator">|</span>
     <button mat-button (click)="navigateToSection('about')" class="nav-link">
       {{ 'toolbar.about' | translate }}
     </button>
-  </nav>
+    <button mat-button (click)="navigateToSection('contact')" class="nav-link">
+      {{ 'toolbar.contact' | translate }}
+    </button>
+  </div>
   <button mat-icon-button (click)="toggleLanguage()" class="lang-toggle">
     {{ translationService.currentLang() | uppercase }}
   </button>
-</mat-toolbar>
+  <button mat-icon-button class="hamburger" (click)="toggleMobileMenu()" [attr.aria-label]="'Toggle menu'">
+    <mat-icon>{{ isMobileMenuOpen() ? 'close' : 'menu' }}</mat-icon>
+  </button>
+</nav>

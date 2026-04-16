@@ -1,15 +1,13 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Toolbar } from './components/toolbar/toolbar';
-import { Footer } from './components/footer/footer';
-import { TranslationService } from './core/i18n/translation.service';
+import { ScrollProgress } from './components/scroll-progress/scroll-progress';
 
 @Component({
-  imports: [RouterModule, Toolbar, Footer],
   selector: 'app-root',
+  standalone: true,
+  imports: [RouterModule, Toolbar, ScrollProgress],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App {
-  private translationService = inject(TranslationService);
-}
+export class App {}
