@@ -1,0 +1,20 @@
+<lib-section id="contact" [title]="'contact.title' | translate">
+  <p class="contact-subtitle" scrollReveal>{{ 'contact.subtitle' | translate }}</p>
+  <div class="social-cards" scrollReveal [staggerIndex]="1">
+    @for (link of socialLinks; track link.nameKey) {
+      <a
+        [href]="link.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-card"
+        [attr.aria-label]="link.nameKey | translate"
+      >
+        <mat-icon class="social-icon">{{ link.icon }}</mat-icon>
+        <span class="social-label">{{ link.nameKey | translate }}</span>
+      </a>
+    }
+  </div>
+  <footer class="footer-credit">
+    <span>© {{ currentYear }} {{ 'about.name' | translate }}</span>
+  </footer>
+</lib-section>

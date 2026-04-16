@@ -3,10 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { AboutSection } from './components/about-section/about-section';
 import { ProjectsSection } from './components/projects-section/projects-section';
 import { HeroSection } from './components/hero-section/hero-section';
+import { ContactSection } from './components/contact-section/contact-section';
 
 @Component({
   selector: 'app-home',
-  imports: [HeroSection, AboutSection, ProjectsSection],
+  imports: [HeroSection, AboutSection, ProjectsSection, ContactSection],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
