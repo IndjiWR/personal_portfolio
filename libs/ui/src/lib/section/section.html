@@ -1,6 +1,6 @@
-<section [id]="id()" class="section">
+<section [id]="id()" class="section" [ngClass]="sectionClass()">
   @if (title()) {
-    <h2 class="section-title">{{ title() }}</h2>
+    <h2 class="section-title"><span class="comment-prefix">// </span>{{ title() }}</h2>
   }
   <ng-content></ng-content>
 </section>

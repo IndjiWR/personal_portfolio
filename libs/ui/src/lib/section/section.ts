@@ -10,4 +10,5 @@ import { CommonModule } from '@angular/common';
 export class Section {
   id = input<string>('');
   title = input<string>('');
+  sectionClass = input<string>('');
 }

@@ -5,15 +5,28 @@ import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
+import { ProjectService } from 'projects';
 
 // Mock canvas getContext for jsdom (not natively supported)
 HTMLCanvasElement.prototype.getContext = jest.fn().mockReturnValue(null);
+
+// Mock IntersectionObserver for jsdom environment
+class MockIntersectionObserver {
+  private callback: IntersectionObserverCallback;
+  constructor(callback: IntersectionObserverCallback) {
+    this.callback = callback;
+  }
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
 
 describe('Home', () => {
   let component: Home;
   let fixture: ComponentFixture<Home>;
 
   beforeEach(async () => {
+    (globalThis as unknown as Record<string, unknown>).IntersectionObserver = MockIntersectionObserver;
     await TestBed.configureTestingModule({
       imports: [Home, TranslateModule.forRoot()],
       providers: [
@@ -23,6 +36,13 @@ describe('Home', () => {
           provide: ActivatedRoute,
           useValue: {
             fragment: of(null),
+          },
+        },
+        {
+          provide: ProjectService,
+          useValue: {
+            getVisibleProjects: () => of([]),
+            getCategories: () => of([]),
           },
         },
       ],
@@ -57,6 +77,13 @@ describe('Home', () => {
               fragment: of('about'),
             },
           },
+          {
+            provide: ProjectService,
+            useValue: {
+              getVisibleProjects: () => of([]),
+              getCategories: () => of([]),
+            },
+          },
         ],
       });
 
@@ -84,6 +111,13 @@ describe('Home', () => {
             provide: ActivatedRoute,
             useValue: {
               fragment: of(null),
+            },
+          },
+          {
+            provide: ProjectService,
+            useValue: {
+              getVisibleProjects: () => of([]),
+              getCategories: () => of([]),
             },
           },
         ],
@@ -116,6 +150,13 @@ describe('Home', () => {
               provide: ActivatedRoute,
               useValue: {
                 fragment: of('non-existent'),
+              },
+            },
+            {
+              provide: ProjectService,
+              useValue: {
+                getVisibleProjects: () => of([]),
+                getCategories: () => of([]),
               },
             },
           ],
