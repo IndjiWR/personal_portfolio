@@ -2,7 +2,8 @@
   "toolbar": {
     "logo": "Home",
     "projects": "Progetti",
-    "about": "Chi sono"
+    "about": "Chi sono",
+    "contact": "Contatti"
   },
   "footer": {
     "instagram": "Instagram",
@@ -11,7 +12,16 @@
   },
   "home": {
     "title": "Ciao",
-    "subtitle": "Portfolio Personale - Gbohou Indji Israel"
+    "subtitle": "Portfolio Personale - Gbohou Indji Israel",
+    "hero": {
+      "name": "Gbohou Indji Israel",
+      "role": "Sviluppatore Full-Stack",
+      "tagline1": "Costruire software che scala.",
+      "tagline2": "Java · Angular · Cloud · AI",
+      "tagline3": "Codice calmo, risultati puliti.",
+      "ctaProjects": "Vedi Progetti",
+      "ctaContact": "Contattami"
+    }
   },
   "projects": {
     "title": "Progetti",
@@ -71,6 +81,12 @@
   "about": {
     "title": "Chi sono",
     "comingSoon": "Pagina Chi sono in arrivo...",
+    "name": "Gbohou Indji Israel",
+    "role": "Sviluppatore Full-Stack",
     "bioPlaceholder": "Lavoro come sviluppatore Full stack dal 2022, con un'esperienza concreta nel settore bancario e una curiosità verso il progresso, soprattutto in ambito di IA. Nel privato mi immergo in progetti sia personali che collaborativi, prediligendo lavori di gruppo in stile Agile. \n\nTranquillità e serenità accompagnano sempre la qualità del lavoro, per questo mi piace citare sempre che \"ogni sorriso va condiviso\"."
+  },
+  "contact": {
+    "title": "Contattami",
+    "subtitle": "Costruiamo qualcosa insieme."
   }
 }

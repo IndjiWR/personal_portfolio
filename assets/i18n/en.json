@@ -2,7 +2,8 @@
   "toolbar": {
     "logo": "Home",
     "projects": "Projects",
-    "about": "Who am I"
+    "about": "Who am I",
+    "contact": "Contact"
   },
   "footer": {
     "instagram": "Instagram",
@@ -11,7 +12,16 @@
   },
   "home": {
     "title": "Hello",
-    "subtitle": "Personal Portfolio - Gbohou Indji Israel"
+    "subtitle": "Personal Portfolio - Gbohou Indji Israel",
+    "hero": {
+      "name": "Gbohou Indji Israel",
+      "role": "Full-Stack Developer",
+      "tagline1": "Building software that scales.",
+      "tagline2": "Java · Angular · Cloud · AI",
+      "tagline3": "Calm code, clean results.",
+      "ctaProjects": "View Projects",
+      "ctaContact": "Get in Touch"
+    }
   },
   "projects": {
     "title": "Projects",
@@ -71,6 +81,12 @@
   "about": {
     "title": "Who am I",
     "comingSoon": "About page coming soon...",
+    "name": "Gbohou Indji Israel",
+    "role": "Full-Stack Developer",
     "bioPlaceholder": "I've been working as a Full stack developer since 2022, with concrete experience in the banking sector and a curiosity for progress, especially in AI. In my private time, I immerse myself in both personal and collaborative projects, preferring Agile-style team work.\n\nCalmness and serenity always accompany work quality, which is why I like to say that \"smiles go for miles\"."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Let's build something together."
   }
 }
