@@ -6,6 +6,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      // Keep in sync with CSS custom properties in apps/portfolio/src/styles.scss :root
       colors: {
         bg: '#0a0a0f',
         surface: '#12121a',

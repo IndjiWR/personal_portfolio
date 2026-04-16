@@ -15,6 +15,7 @@ $dark-dev-theme: mat.define-theme((
 :root {
   @include mat.all-component-themes($dark-dev-theme);
 
+  // Keep in sync with Tailwind config in tailwind.config.js theme.extend.colors
   // Design tokens
   --color-bg: #0a0a0f;
   --color-surface: #12121a;
