@@ -1,8 +1,9 @@
 {
   "toolbar": {
     "logo": "Home",
+    "about": "About",
     "projects": "Projects",
-    "about": "Who am I",
+    "exploring": "Exploring",
     "contact": "Contact"
   },
   "footer": {
@@ -12,15 +13,16 @@
   },
   "home": {
     "title": "Hello",
-    "subtitle": "Personal Portfolio - Gbohou Indji Israel",
+    "subtitle": "Personal Portfolio · Gbohou Indji Israel",
     "hero": {
       "name": "Gbohou Indji Israel",
-      "role": "Full-Stack Developer",
-      "tagline1": "Building software that scales.",
-      "tagline2": "Java · Angular · Cloud · AI",
-      "tagline3": "Calm code, clean results.",
+      "role": "Full-Stack Developer · Parma, IT",
+      "tagline1": "Enterprise software that actually ships.",
+      "tagline2": "Java · Angular · Cloud · AI tooling.",
+      "tagline3": "Readable code beats clever code.",
       "ctaProjects": "View Projects",
-      "ctaContact": "Get in Touch"
+      "ctaContact": "Get in Touch",
+      "statusOpen": "Open to work"
     }
   },
   "projects": {
@@ -28,65 +30,79 @@
     "comingSoon": "Projects page coming soon...",
     "summaryPlaceholder": "An overview of my projects. My main stack is Java and Angular, but I'm happy to adapt to new languages and frameworks when the situation calls for it.\n\nClick below to see more details.",
     "viewAll": "View All Projects",
+    "viewProject": "View project",
     "sections": {
       "collaborations": "Collaborations",
-      "personal": "Personal Projects",
-      "old-projects": "Old Projects"
+      "personal": "Personal",
+      "old-projects": "Archive"
     },
     "backToProjects": "Back to Projects",
     "notFound": "Project not found",
     "items": {
-      "project-alpha": {
-        "title": "Project Alpha",
-        "summary": "A collaborative web application built with a distributed team.",
-        "description": "Project Alpha is a full-stack web application developed in collaboration with an international team. The project features real-time collaboration tools, user authentication, and a responsive design that works across all devices."
-      },
-      "open-source-lib": {
-        "title": "Open Source Library",
-        "summary": "Contributing to an open source UI component library.",
-        "description": "Contributed multiple components to a popular open source UI library. Implemented accessibility features and wrote comprehensive unit tests. The contributions improved the library's ARIA support and added new interactive components."
+      "casamatch": {
+        "title": "CasaMatch",
+        "summary": "Peer-to-peer real-estate marketplace prototype — Tinder-style swipe on Next.js 16.",
+        "description": "Peer-to-peer real-estate marketplace prototype. Swipe-based discovery (Tinder meets Idealista), built on Next.js 16 App Router with Zustand for state (persisted to localStorage), Framer Motion for the swipe gestures, and shadcn/ui on Tailwind v4.\n\nThe prototype covers the full journey: mock SPID login, role onboarding (seeker / offeror / both), discover feed with 50 mock properties and a 200-city fuzzy autocomplete, match and chat with auto-reply, privacy-blind reveal (address and documents unlock after a match), and a FREE/BASE/PRO/ELITE subscription system with daily limits on swipes, super-likes and rewinds."
       },
       "personal-website": {
         "title": "Personal Portfolio",
-        "summary": "Webapp that showcases my projects and skills.",
-        "description": "A modern, responsive portfolio website built with Angular and Tailwind CSS. Features include internationalization support (English/Italian), dark theme, and smooth animations. Deployed on GitHub Pages."
-      },
-      "task-manager": {
-        "title": "Task Manager App",
-        "summary": "A productivity app for managing daily tasks and goals.",
-        "description": "A feature-rich task management application with drag-and-drop functionality, recurring tasks, and progress tracking. Built with a mobile-first approach and includes offline support via PWA features."
-      },
-      "university-project": {
-        "title": "University Thesis Project",
-        "summary": "Machine learning research project for image classification.",
-        "description": "A research project exploring convolutional neural networks for image classification. Achieved 95% accuracy on the test dataset and documented findings in a published thesis paper."
-      },
-      "flashcard-app": {
-        "title": "Flashcard Learning App",
-        "summary": "An educational app using spaced repetition for learning.",
-        "description": "A simple but effective flashcard application that uses spaced repetition algorithms to optimize learning. Featured user-generated decks and progress statistics."
-      },
-      "monthly-expenses-app": {
-        "title": "Monthly Expenses",
-        "summary": "A mobile app for tracking personal expenses and budgeting.",
-        "description": "A cross-platform mobile application built with Ionic and Angular for tracking daily expenses. Features include expense categorization, monthly budget overview, visual charts, and data export. Available for both Android and iOS devices."
+        "summary": "This site. Angular 18 in an Nx monorepo, custom canvas hero, EN/IT.",
+        "description": "This site. Angular 18 inside an Nx monorepo, Tailwind for styling, a hand-rolled canvas hero (aurora orbs + mouse-reactive particle network), scramble text, magnetic CTAs, scroll-driven reveals, and ngx-translate for EN/IT. Hosted on GitHub Pages."
       },
       "smart-rockets": {
         "title": "Smart Rockets",
-        "summary": "A genetic algorithm simulation showing rocket evolution.",
-        "description": "A school project demonstrating genetic algorithms through rocket navigation. Users can draw obstacle paths and watch rockets evolve across generations to reach the goal. Features editable parameters including learning rate, population size, and gene mutation randomness."
+        "summary": "Genetic-algorithm sandbox — rockets evolve to get past drawn obstacles.",
+        "description": "A genetic-algorithm sandbox. You draw the obstacle path, the rockets evolve across generations to reach the target. Learning rate, population size and mutation randomness are editable at runtime. It was a school project, but it's still fun to watch."
+      },
+      "monthly-expenses-app": {
+        "title": "Monthly Expenses",
+        "summary": "Ionic + Angular mobile app for tracking personal expenses.",
+        "description": "Cross-platform mobile app built with Ionic + Angular to track daily expenses. Category breakdown, monthly budget overview, charts, data export. Runs on Android and iOS."
       }
     }
   },
   "about": {
-    "title": "Who am I",
-    "comingSoon": "About page coming soon...",
+    "title": "About",
     "name": "Gbohou Indji Israel",
     "role": "Full-Stack Developer",
-    "bioPlaceholder": "I've been working as a Full stack developer since 2022, with concrete experience in the banking sector and a curiosity for progress, especially in AI. In my private time, I immerse myself in both personal and collaborative projects, preferring Agile-style team work.\n\nCalmness and serenity always accompany work quality, which is why I like to say that \"smiles go for miles\"."
+    "basedIn": "PARMA, IT",
+    "bio": "Full-Stack developer with <strong>4+ years of experience</strong>, primarily on <strong>Java</strong> and <strong>Angular</strong>. I have worked on <em>corporate programs for banking-sector clients</em>, both greenfield initiatives and day-to-day evolution of long-lived services. I value readable, maintainable code — the kind that doesn't need to be rewritten six months later. I work well in Agile teams, particularly in engagements where the client is part of the process.",
+    "ai": "Outside office hours I focus on <strong class=\"ai-block-term\">AI-native development</strong>: I use <em>Claude Code</em> daily, experiment with MCP servers and agent SDKs, and build small products such as <strong class=\"ai-block-term\">CasaMatch</strong> or tools for personal use. Staying current is part of the craft — new primitives ship every year, and I would rather work with them than only read about them.",
+    "stats": {
+      "years": "years shipping code",
+      "clients": "enterprise clients"
+    },
+    "comingSoon": "About page coming soon..."
+  },
+  "exploring": {
+    "title": "What I'm exploring",
+    "intro": "Areas I explore outside working hours — AI tooling, LLM-native prototypes, and small utilities built for personal use.",
+    "items": {
+      "aiTooling": {
+        "label": "AI TOOLING",
+        "title": "Claude Code & agent workflows",
+        "desc": "I use Claude Code every day: custom skills, hooks, MCP servers, agent orchestration. Configurations that genuinely shorten development cycles, not only demo time."
+      },
+      "llmApps": {
+        "label": "LLM APPS",
+        "title": "LLM-native prototypes",
+        "desc": "Small products built on top of the Vercel AI SDK — streaming, tool-use, structured output, and guardrails designed to hold up beyond the demo."
+      },
+      "utility": {
+        "label": "AUTOMATION",
+        "title": "Personal utility programs",
+        "desc": "Automating the repetitive parts of the week: CLI scripts, workflow runners, and small tools I end up reusing across projects."
+      }
+    }
   },
   "contact": {
-    "title": "Get in Touch",
-    "subtitle": "Let's build something together."
+    "title": "Contact",
+    "availability": "full-time · side-projects · AI · product",
+    "cvLabel": "Download my CV",
+    "cvHint": "PDF · pick your language",
+    "cvLangEn": "English version",
+    "cvLangIt": "Italian version",
+    "cvCta": "DOWNLOAD",
+    "builtWith": "Angular · Nx · Tailwind · hand-rolled canvas"
   }
 }

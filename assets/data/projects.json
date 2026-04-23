@@ -1,47 +1,31 @@
 [
   {
-    "id": "project-alpha",
-    "image": "assets/images/projects/project-alpha.png",
-    "languages": ["TypeScript", "Python"],
-    "frameworks": ["Angular", "FastAPI", "PostgreSQL"],
-    "githubUrl": "https://github.com/example/project-alpha",
-    "category": "collaborations",
-    "local": true
-  },
-  {
-    "id": "open-source-lib",
-    "image": "assets/images/projects/open-source-lib.png",
+    "id": "casamatch",
+    "image": "assets/images/projects/casamatch.svg",
     "languages": ["TypeScript"],
-    "frameworks": ["Angular", "Jest"],
-    "githubUrl": "https://github.com/example/open-source-lib",
+    "frameworks": ["Next.js 16", "Zustand", "Framer Motion", "shadcn/ui", "Tailwind v4"],
     "category": "collaborations",
+    "production": true,
     "local": true
   },
   {
     "id": "personal-website",
     "image": "assets/images/projects/personal_portfolio.png",
     "languages": ["TypeScript", "SCSS"],
-    "frameworks": ["Angular", "Tailwind CSS", "Nx"],
+    "frameworks": ["Angular 18", "Tailwind CSS", "Nx"],
     "githubUrl": "https://github.com/IndjiWR/personal_portfolio",
     "category": "personal",
     "production": true,
     "local": true
   },
   {
-    "id": "task-manager",
-    "image": "assets/images/projects/task-manager.png",
-    "languages": ["TypeScript", "HTML"],
-    "frameworks": ["Angular", "ngrx", "Angular Material"],
-    "githubUrl": "https://github.com/example/task-manager",
+    "id": "monthly-expenses-app",
+    "image": "assets/images/projects/monthly-expenses.png",
+    "languages": ["TypeScript", "HTML", "CSS"],
+    "frameworks": ["Ionic", "Angular", "Nx", "Tailwind"],
+    "githubUrl": "https://github.com/IndjiWR/monthly-expenses",
     "category": "personal",
-    "local": true
-  },
-  {
-    "id": "university-project",
-    "image": "assets/images/projects/thesis.png",
-    "languages": ["Python", "Jupyter Notebook"],
-    "frameworks": ["TensorFlow", "Keras", "NumPy"],
-    "category": "old-projects",
+    "production": true,
     "local": true
   },
   {
@@ -51,16 +35,6 @@
     "frameworks": ["Genetic Algorithm"],
     "githubUrl": "https://github.com/IndjiWR/Smart_Rockets",
     "category": "old-projects",
-    "local": true,
-    "production": true
-  },
-  {
-    "id": "monthly-expenses-app",
-    "image": "assets/images/projects/monthly-expenses.png",
-    "languages": ["Typescript", "HTML", "CSS"],
-    "frameworks": ["Ionic", "Angular", "NX", "Tailwind"],
-    "githubUrl": "https://github.com/IndjiWR/monthly-expenses",
-    "category": "personal",
     "production": true,
     "local": true
   }
